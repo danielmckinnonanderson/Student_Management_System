@@ -39,10 +39,13 @@ public class StudentService extends DBConnection implements StudentDAOI {
 		try {
 			this.connect();
 			
-			Query q = em.createQuery(getStudentByEmail);
-			q.setParameter("sEmail", sEmail);
+//			Query q = em.createQuery(getStudentByEmail);
+//			q.setParameter("sEmail", sEmail);
+//			
+//			Student foundStudent = (Student)q.getSingleResult(); 
 			
-			Student foundStudent = (Student)q.getSingleResult(); 
+			Student foundStudent = em.find(Student.class, sEmail);
+			
 			
 			this.disconnect();
 			return foundStudent;
@@ -84,13 +87,13 @@ public class StudentService extends DBConnection implements StudentDAOI {
 		}
 	}
 
-//	@Override
-//	public List<Course> getStudentCourses(String sEmail) {
-//		try {
-//			
-//		} catch (Exception e) {
-//			
-//		}
-//	}
+	@Override
+	public List<Course> getStudentCourses(String sEmail) {
+		try {
+			return null;
+		} catch (Exception e) {
+			return null;
+		}
+	}
 
 }

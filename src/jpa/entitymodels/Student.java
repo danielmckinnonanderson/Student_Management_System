@@ -37,6 +37,22 @@ public class Student {
 		this.sPass = sPass;
 		this.sCourses = sCourses;
 	}
+	
+	@Override
+	public String toString() {
+		return String.format("%s, %s\n", sName, sEmail);
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		Student compare = (Student) o;
+		if (this.sName == compare.getsName()
+				&& this.sEmail == compare.getsEmail()
+				&& this.sCourses == compare.getsCourses()) {
+			return true;
+		}
+		return false;
+	}
 
 	public String getsName() {
 		return sName;

@@ -10,5 +10,5 @@ public interface StudentDAOI {
 	abstract Student getStudentByEmail(String sEmail);
 	abstract boolean validateStudent(String sEmail, String sPassword);
 	abstract void registerStudentToCourse(String sEmail, int cId);
-//	abstract List<Course> getStudentCourses(String sEmail);
+	abstract List<Course> getStudentCourses(String sEmail);
 }
