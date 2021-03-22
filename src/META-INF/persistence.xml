@@ -18,7 +18,7 @@
 				value="password" />
 
 			<!-- EclipseLink configuration -->
-			<property name="eclipselink.logging.level" value="INFO" />
+			<property name="eclipselink.logging.level" value="OFF" />
 			<property name="eclipselink.ddl-generation" value="create-or-extend-tables"/>
 		</properties>
 
