@@ -76,7 +76,6 @@ public class StudentService extends DBConnection implements StudentDAOI {
 		return false;
 	}
 
-
 	public void registerStudentToCourse(String sEmail, int cId) {
 		try {
 			this.connect();
@@ -90,7 +89,7 @@ public class StudentService extends DBConnection implements StudentDAOI {
 			if (courses.contains(selectedCourse)) {
 				System.out.println("\nStudent is already registered for this course!\n");
 				this.disconnect();
-				
+
 			} else {
 				/*if not already registered, add course to 
 				 student's course list*/
@@ -108,8 +107,10 @@ public class StudentService extends DBConnection implements StudentDAOI {
 				this.disconnect();
 			}
 			
+		} catch (NullPointerException npe) {
+			System.out.println("Please select a course from the Course List provided.");
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.out.println("Something went wrong registering student to course, please try again.");
 		}
 	}
 
