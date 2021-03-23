@@ -86,6 +86,7 @@ public class SMSRunner {
 					sc.next();
 				} catch (Exception e) {
 					System.out.println("Error registering class, please try again.\n");
+					sc.next();
 				}
 			}
 		}
