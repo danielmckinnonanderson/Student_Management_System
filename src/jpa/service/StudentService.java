@@ -83,13 +83,11 @@ public class StudentService extends DBConnection implements StudentDAOI {
 			Student foundStudent = em.find(Student.class, sEmail);
 			Course selectedCourse = em.find(Course.class, cId);
 			@SuppressWarnings("unchecked")
-			List<Course> courses = foundStudent.getsCourses();
-			
+			List<Course> courses = foundStudent.getsCourses();		
 			//check if student is already registered for specified course
 			if (courses.contains(selectedCourse)) {
 				System.out.println("\nStudent is already registered for this course!\n");
 				this.disconnect();
-
 			} else {
 				/*if not already registered, add course to 
 				 student's course list*/
@@ -105,8 +103,7 @@ public class StudentService extends DBConnection implements StudentDAOI {
 				System.out.println("Successfully registered for " + selectedCourse.getcName() + " with "
 						+ selectedCourse.getcInstructorName());
 				this.disconnect();
-			}
-			
+			}		
 		} catch (NullPointerException npe) {
 			System.out.println("Please select a course from the Course List provided.");
 		} catch (Exception e) {
